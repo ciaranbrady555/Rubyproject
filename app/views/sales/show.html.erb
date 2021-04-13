@@ -1,0 +1,33 @@
+
+
+
+<div  class="jumbotron jumbotron-fluid">
+  <div class="container" >
+  <h1 class="display-4"> Car: <%= @sale.make %> <%= @sale.model %> </h1>
+ 
+  <p class="lead">
+  <strong>Year:</strong>
+  <%= @sale.year %>
+  <br>
+  <strong>Features:</strong>
+  <%= @sale.features %>
+  <br>
+  <strong>Mileage:</strong>
+  <%= @sale.mileage %>
+  <br>
+  <strong>Price:</strong>
+  <%= @sale.price %>
+  <br>
+  </p>
+  <hr class="my-4">
+   <%= link_to 'Edit', edit_sale_path(@sale), class:"btn btn-dark" %> 
+<%= link_to 'Back', sales_path, class:"btn btn-dark" %>
+
+</div>
+</div>
+
+
+
+
+  
+

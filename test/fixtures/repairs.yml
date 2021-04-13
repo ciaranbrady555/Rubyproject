@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  make: MyString
+  model: MyString
+  plate: MyString
+  work_needed: MyString
+  status: MyString
+
+two:
+  make: MyString
+  model: MyString
+  plate: MyString
+  work_needed: MyString
+  status: MyString

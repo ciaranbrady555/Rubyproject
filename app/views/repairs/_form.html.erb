@@ -1,0 +1,42 @@
+<%= form_with(model: repair) do |form| %>
+  <% if repair.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(repair.errors.count, "error") %> prohibited this repair from being saved:</h2>
+
+      <ul>
+        <% repair.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    
+    <%= form.text_field :make, class:"form-control", placeholder:"Make" %>
+  </div>
+
+  <div class="field form-group">
+    
+    <%= form.text_field :model, class:"form-control", placeholder:"Model" %>
+  </div>
+
+  <div class="field form-group">
+    
+    <%= form.text_field :plate, class:"form-control", placeholder:"Plate" %>
+  </div>
+
+  <div class="field form-group">
+
+    <%= form.text_field :work_needed, class:"form-control", placeholder:"Work needed" %>
+  </div>
+
+  <div class="field form-group">
+    
+    <%= form.text_field :status, class:"form-control", placeholder:"Status" %>
+  </div>
+  <br>
+  <div class="actions form-group">
+    <%= form.submit class:"btn btn-dark" %>
+  </div>
+<% end %>
