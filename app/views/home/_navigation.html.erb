@@ -12,17 +12,31 @@
 
       <div class="navbar-nav">
       <!--  <%= link_to 'Home', root_path, class:"nav-link" %> -->
-
-        <% if mechanic_user_signed_in? %>
+      
+       <% if mechanic_user_signed_in? %>
           <%= link_to 'Repairs', repairs_path, class:"nav-link" %>
           <%= link_to 'Sales', sales_path, class:"nav-link" %>
           <%= link_to 'Customers', customers_path, class:"nav-link" %>
           <%= link_to 'Finance', home_finance_path, class:"nav-link" %>
         <% end %>
-
-
+ 
+       <!-- filtering user by role 0 = guest see's only profile stuff, 1 = mechanic see's repairs and customers 2= sales see's customers finance and sales, 3= admin sees all -->
+      <!-- this is the code that would be used if the roles were working -->
+        <% if (mechanic_user_signed_in?) && (:role == 1) %>
+          <%= link_to 'Repairs', repairs_path, class:"nav-link" %>
+          <%= link_to 'Customers', customers_path, class:"nav-link" %>
+        <% elseif (mechanic_user_signed_in?) && (self.runcheck(:role == 2)) %>
+          <%= link_to 'Sales', sales_path, class:"nav-link" %>
+          <%= link_to 'Customers', customers_path, class:"nav-link" %>
+          <%= link_to 'Finance', home_finance_path, class:"nav-link" %>
+        <% end %>
+        <% if (mechanic_user_signed_in?) && (:role == 3) %>
+          <%= link_to 'Repairs', repairs_path, class:"nav-link" %>
+          <%= link_to 'Sales', sales_path, class:"nav-link" %>
+          <%= link_to 'Customers', customers_path, class:"nav-link" %>
+          <%= link_to 'Finance', home_finance_path, class:"nav-link" %>
+        <% end %> 
       </div>  
-
       <!--not sure i remember how to push this to the right side of the nav bar gotta check later -->
       <div class="navbar-nav float-right">  
 
